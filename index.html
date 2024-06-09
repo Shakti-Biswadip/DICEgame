@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+<style>
+  .container {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+
+}
+
+body {
+  background-color: #393E46;
+}
+
+h1 {
+  margin: 30px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 8rem;
+  color: #4ECCA3;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff,  0 0 40px #6e8c6f, 0 0 5px #0ce600, 0 0 60px #e60073, 0 0 30px #0032e6;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #0e0d0d, 0 0 20px #04270b, 0 0 30px #d7c4ce, 0 0 40px #6e8c6f, 0 0 5px #13650f, 0 0 60px #e60073, 0 0 30px #0032e6;
+  }
+}
+
+p {
+  font-size: 2rem;
+  color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+}
+
+img {
+  width: 80%;
+}
+
+footer {
+  margin-top: 5%;
+  color: #EEEEEE;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+.buttonD {
+
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 100px 2px;
+  animation: glow 1s ease-out infinite alternate;
+}
+
+.buttonD p {
+  color: #ffffff;
+  background-color: #4ECCA3;
+  display: inline-block;
+  font-family: 'Lobster', cursive;
+  padding: 10px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  font-size: 1.5rem;
+  line-height: 100px;
+  
+}
+@media (max-width:500px) {
+  .buttonD p {
+    font-size: rem;
+  }
+}
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p>Player 1</p>
+        <img class="img1" src="./dice6.png" />
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <img class="img2" src="./dice6.png" />
+      </div>
+    </div>
+
+    <div class="buttonD">
+     <p>BUTTON</p>
+    </div>
+    
+
+    <footer>play 🎲 for 🎲 fun</footer>
+    <script  charset="utf-8">
+      /*player 1 */
+
+var randomNumber1 = Math.floor(Math.random(randomNumber1)*6)+1;
+var randomDiceImg1 = "./" + "dice" + randomNumber1 + ".png";
+document.querySelector("img.img1").setAttribute("src", randomDiceImg1);
+
+/* Player 2 */
+
+var randomNumber2 = Math.floor(Math.random(randomNumber2)*6)+1;
+var randomDiceImg2 = "./" + "dice" + randomNumber2 + ".png";
+document.querySelector("img.img2").setAttribute("src", randomDiceImg2)
+
+/* Declearation */
+
+if (randomNumber1 > randomNumber2) {
+    document.querySelector("h1").innerHTML="🚩Player 1 Winner";
+} else if (randomNumber2 > randomNumber1) {
+    document.querySelector("h1").innerHTML="PLayer 2 Winner🚩";
+}
+
+else if (randomNumber1 === randomNumber2) {
+    document.querySelector("h1").innerHTML="Draw";
+}
+
+
+/refresh button/
+
+const button =  document.querySelector(".buttonD");
+button.addEventListener("click", () => {
+    window.location.reload();
+} );
+    </script>
+  </body>
+</html>
