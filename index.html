@@ -110,8 +110,9 @@ footer {
     <footer>play 🎲 for 🎲 fun</footer>
     <script  charset="utf-8">
 
-      function diceGame () {
-      /*player 1 */
+
+function diceGame (){
+/*player 1 */
 
 var randomNumber1 = Math.floor(Math.random(randomNumber1)*6)+1;
 var randomDiceImg1 = "./" + "dice" + randomNumber1 + ".png";
@@ -133,19 +134,27 @@ if (randomNumber1 > randomNumber2) {
 
 else if (randomNumber1 === randomNumber2) {
     document.querySelector("h1").innerHTML="Draw";
-   document.querySelector("h1").style.backgroundColor="lightgreen";
+    document.querySelector("h1").style.backgroundColor="lightgreen";
     document.querySelector("h1").style.borderRadius="30px";
+    
 }
-      }
+}
 
-/refresh button/
+/*refresh button*/
 
-const button =  document.querySelector(".buttonD p");
-button.addEventListener("click", () => {
-    window.onload = diceGame ();
-      document.querySelector(".buttonD p").style.backgroundColor="white";
+const button1 =  document.querySelector(".buttonD p");
+button1.addEventListener("click", () => {
+    document.querySelector(".buttonD p").style.backgroundColor="white";
     document.querySelector(".buttonD p").style.color="black";
+    window.onload = diceGame ();
 } );
+
+/*sound on button */
+
+function buttonSound () {
+    var sound = document.getElementById('audio')
+    sound.play();
+}
     </script>
   </body>
 </html>
