@@ -9,7 +9,6 @@
   width: 70%;
   margin: auto;
   text-align: center;
-  margin-top:200px;
 }
 
 .dice {
@@ -138,7 +137,7 @@ else if (randomNumber1 === randomNumber2) {
 
 const button =  document.querySelector(".buttonD");
 button.addEventListener("click", () => {
-    window.location.reload();
+    window.onload = diceGame ();
       document.querySelector(".buttonD p").style.backgroundColor="white";
     document.querySelector(".buttonD p").style.color="black";
 } );
