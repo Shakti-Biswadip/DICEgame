@@ -143,21 +143,22 @@ else if (randomNumber1 === randomNumber2) {
 }
 }
 
-/*refresh button*/
+/*refresh button sound on button */
 
 const button1 =  document.querySelector(".buttonD p");
 button1.addEventListener("click", () => {
     document.querySelector(".buttonD p").style.backgroundColor="white";
     document.querySelector(".buttonD p").style.color="black";
     window.onload = diceGame ();
+
+        document.querySelector(".buttonD").addEventListener("click", function () {
+
+               var tapButton = new Audio("tapButton.mp3");
+            tapButton.play();
+            
+        }  );
+    
 } );
-
-/*sound on button */
-
-function buttonSound () {
-    var sound = document.getElementById('audio')
-    sound.play();
-}
     </script>
   </body>
 </html>
